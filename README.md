@@ -111,7 +111,3 @@ Abrir a página → `Ctrl/Cmd + P` → destino **Salvar como PDF**, papel **A4**
 margens **padrão** e **desmarcar** "Cabeçalhos e rodapés". O CSS de impressão
 esconde a barra de ações e está calibrado para sair em uma página, no idioma e
 na paleta que estiverem na tela.
-
----
-
-Layout baseado em [guilhermefeitosa66/profile](https://github.com/guilhermefeitosa66/profile).
