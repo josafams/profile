@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" data-palette="amber">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josafa Martins — Engenheiro de Software Backend | Python · Ruby · TypeScript</title>
+<meta name="description" content="Currículo de Josafa Martins — engenheiro de software backend com Python (FastAPI), Ruby on Rails, TypeScript (NestJS, Next.js), RabbitMQ, PostgreSQL, MongoDB e AWS.">
+<meta name="author" content="Josafa Martins">
+<meta name="theme-color" content="#201e1a">
+
+<link rel="canonical" href="https://josafams.github.io/profile/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Josafa Martins — Engenheiro de Software Backend | Python · Ruby · TypeScript">
+<meta property="og:description" content="Engenheiro de software backend: Python, FastAPI, Ruby on Rails, TypeScript, RabbitMQ e AWS. Fundador da NowEv, plataforma de gestão de carregadores de veículos elétricos (OCPP 1.6).">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://josafams.github.io/profile/">
+<meta property="og:image" content="https://josafams.github.io/profile/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/curriculo.css">
+
+<!-- Sorteia a paleta e resolve o idioma ANTES da primeira pintura:
+     sem isso a página apareceria em âmbar e piscaria na cor sorteada. -->
+<script>
+(function () {
+  var PALETTES = ['amber', 'orange', 'ruby', 'rose', 'violet', 'ocean', 'teal', 'forest'];
+  var root = document.documentElement;
+  var q = new URLSearchParams(location.search);
+
+  // ?palette=ocean fixa uma variação; sem isso, sorteia uma a cada carregamento
+  var palette = q.get('palette');
+  root.dataset.palette = PALETTES.indexOf(palette) > -1
+    ? palette
+    : PALETTES[Math.floor(Math.random() * PALETTES.length)];
+
+  // ?lang=en > escolha salva > idioma do navegador
+  var lang = q.get('lang');
+  if (lang !== 'pt' && lang !== 'en') {
+    try { lang = localStorage.getItem('cv-lang'); } catch (e) { /* modo anônimo */ }
+  }
+  if (lang !== 'pt' && lang !== 'en') {
+    lang = /^pt\b/i.test(navigator.language || '') ? 'pt' : 'en';
+  }
+  root.dataset.lang = lang;
+  root.lang = lang === 'pt' ? 'pt-BR' : 'en';
+})();
+</script>
+</head>
+<body>
+
+<!-- faixa escura que se repete em todas as páginas na impressão -->
+<div class="print-band" aria-hidden="true"></div>
+
+<div class="page">
+
+  <nav class="toolbar no-print" aria-label="Ações">
+    <div class="toolbar__stamp">
+      <span lang="pt">Currículo</span><span lang="en">Résumé</span> ·
+      <span data-stamp-date>2026</span>
+    </div>
+
+    <div class="toolbar__actions">
+      <div class="langswitch" role="group" aria-label="Idioma / Language">
+        <button class="langswitch__btn" type="button" data-set-lang="pt" aria-pressed="true" title="Português (Brasil)">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.4 25.6 10 14 17.6 2.4 10Z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.2" fill="#002776"/></svg></span>
+          <span>PT-BR</span>
+        </button>
+        <button class="langswitch__btn" type="button" data-set-lang="en" aria-pressed="false" title="English">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#012169"/><path d="M0 0 28 20M28 0 0 20" stroke="#fff" stroke-width="4.4"/><path d="M0 0 28 20M28 0 0 20" stroke="#c8102e" stroke-width="2.2"/><path d="M14 0v20M0 10h28" stroke="#fff" stroke-width="6.8"/><path d="M14 0v20M0 10h28" stroke="#c8102e" stroke-width="4"/></svg></span>
+          <span>English</span>
+        </button>
+      </div>
+
+      <button class="btn btn--icon" type="button" data-shuffle
+              title="Trocar a paleta de cores" aria-label="Trocar a paleta de cores">
+        <span class="swatch" aria-hidden="true"></span>
+      </button>
+
+      <a class="btn btn--ghost" href="mailto:desenvolvedorjosafa@gmail.com"><span lang="pt">Contato</span><span lang="en">Contact</span></a>
+      <button class="btn btn--solid" type="button" data-print><span lang="pt">Baixar PDF</span><span lang="en">Download PDF</span></button>
+    </div>
+  </nav>
+
+  <article class="sheet">
+
+    <!-- ============================ coluna escura ============================ -->
+    <aside class="sidebar">
+      <div class="sidebar__deco-top" aria-hidden="true"></div>
+      <div class="sidebar__deco-bottom" aria-hidden="true"></div>
+
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <span class="avatar-fallback" aria-hidden="true">JM</span>
+          <!-- a foto é assets/img/profile.jpg (--photo, no CSS);
+               se ela não existir ou não carregar, ficam as iniciais atrás -->
+          <div class="avatar" role="img" aria-label="Josafa Martins"></div>
+        </div>
+      </div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Contato</span><span lang="en">Contact</span></h2>
+        </div>
+        <ul class="contact">
+          <li><span><a href="mailto:desenvolvedorjosafa@gmail.com">desenvolvedorjosafa@gmail.com</a></span></li>
+          <li><span><a href="https://www.linkedin.com/in/josafa-martins/" target="_blank" rel="me noopener">linkedin.com/in/josafa-martins</a></span></li>
+          <li><span><a href="https://github.com/josafams" target="_blank" rel="me noopener">github.com/josafams</a></span></li>
+          <li>
+            <span lang="pt">Fortaleza, CE — Brasil<br>Disponível para trabalho remoto</span>
+            <span lang="en">Fortaleza, CE — Brazil<br>Available for remote work</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Formação</span><span lang="en">Education</span></h2>
+        </div>
+        <div class="edu">
+          <div>
+            <div class="edu__name"><span lang="pt">Bacharelado em Sistemas de Informação</span><span lang="en">B.Sc. in Information Systems</span></div>
+            <div><span lang="pt">UFPI — Universidade Federal do Piauí</span><span lang="en">UFPI — Federal University of Piauí</span></div>
+            <div class="edu__when">2013 – 2017</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Idiomas</span><span lang="en">Languages</span></h2>
+        </div>
+        <ul class="langs">
+          <li>
+            <b><span lang="pt">Português</span><span lang="en">Portuguese</span></b>
+            <span lang="pt">Nativo</span><span lang="en">Native</span>
+          </li>
+          <!-- TODO: confirmar o nível de inglês -->
+          <li>
+            <b><span lang="pt">Inglês</span><span lang="en">English</span></b>
+            <span lang="pt">Leitura técnica</span><span lang="en">Technical reading</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2>Stack</h2>
+        </div>
+        <ul class="tags">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>Ruby on Rails</li>
+          <li>TypeScript</li>
+          <li>Node.js</li>
+          <li>NestJS</li>
+          <li>Next.js</li>
+          <li>React Native</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Elasticsearch</li>
+          <li>RabbitMQ</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Terraform</li>
+          <li>AWS</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- ============================ coluna clara ============================= -->
+    <div class="main">
+      <div class="main__rail" aria-hidden="true"></div>
+      <div class="main__deco" aria-hidden="true"></div>
+
+      <header class="masthead block">
+        <h1>Josafa <em>Martins</em></h1>
+        <div class="masthead__role">
+          <span lang="pt">Engenheiro de Software Backend · Python · Ruby · TypeScript</span>
+          <span lang="en">Backend Software Engineer · Python · Ruby · TypeScript</span>
+        </div>
+      </header>
+
+      <section class="section section--about block">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Sobre</span><span lang="en">About</span></h2>
+        </div>
+        <p class="about" lang="pt">Engenheiro de software com mais de nove anos de experiência em web e mobile, hoje focado em <strong>backend</strong> com <strong>Python (FastAPI)</strong>, <strong>Ruby on Rails</strong> e <strong>TypeScript (NestJS, Next.js)</strong>. Na <strong>Zapay</strong>, integrei plataformas de CRM a sistemas internos com mensageria em <strong>RabbitMQ</strong>, rodando em <strong>Kubernetes</strong> na AWS. Na <strong>HeroSpark</strong>, plataforma de educação online, construí arquitetura orientada a eventos com EventBridge e SQS e migrei grandes bases de <strong>MongoDB para PostgreSQL</strong>. Sou fundador da <strong>NowEv</strong>, sistema de gerenciamento de carregadores de veículos elétricos sobre o protocolo <strong>OCPP 1.6</strong>. Meu objetivo é criar soluções digitais de qualidade, que impactem positivamente a vida das pessoas e o meio ambiente.</p>
+        <p class="about" lang="en">Software engineer with over nine years of experience across web and mobile, now focused on <strong>backend</strong> work with <strong>Python (FastAPI)</strong>, <strong>Ruby on Rails</strong> and <strong>TypeScript (NestJS, Next.js)</strong>. At <strong>Zapay</strong>, I integrated CRM platforms with internal systems through <strong>RabbitMQ</strong> messaging, running on <strong>Kubernetes</strong> in AWS. At <strong>HeroSpark</strong>, an online education platform, I built an event-driven architecture with EventBridge and SQS and migrated large <strong>MongoDB databases to PostgreSQL</strong>. I am the founder of <strong>NowEv</strong>, an electric vehicle charger management system built on the <strong>OCPP 1.6</strong> protocol. My goal is to build quality digital products that make a positive difference to people and the environment.</p>
+      </section>
+
+      <section class="section block">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Case em destaque</span><span lang="en">Featured case</span></h2>
+        </div>
+
+        <div class="case">
+          <div class="case__top">
+            <div class="case__name">NowEv</div>
+            <div class="case__award"><span lang="pt">Mobilidade elétrica · OCPP 1.6</span><span lang="en">Electric mobility · OCPP 1.6</span></div>
+          </div>
+          <p class="case__lede" lang="pt">Plataforma de gerenciamento de wallbox para veículos elétricos, com comunicação padronizada entre estações de carregamento e veículos pelo protocolo OCPP 1.6.</p>
+          <p class="case__lede" lang="en">A wallbox management platform for electric vehicles, with standardized communication between charging stations and vehicles over the OCPP 1.6 protocol.</p>
+
+          <div class="stack case__stack">NestJS · Next.js · TypeORM · TypeScript · Python · FastAPI · WebSocket</div>
+
+          <dl class="case__facts">
+            <div>
+              <dt lang="pt">Problema</dt><dt lang="en">Problem</dt>
+              <dd lang="pt">Gerenciar e monitorar uma infraestrutura de recarga de veículos elétricos de forma padronizada e escalável.</dd>
+              <dd lang="en">Managing and monitoring EV charging infrastructure in a standardized, scalable way.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Funcionalidades</dt><dt lang="en">Features</dt>
+              <dd lang="pt">Cadastro e monitoramento de wallbox, gestão de usuários, controle de acesso e relatórios estatísticos.</dd>
+              <dd lang="en">Wallbox registration and monitoring, user management, access control and statistical reports.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Minha atuação</dt><dt lang="en">My role</dt>
+              <dd lang="pt">Fundador: arquitetura e desenvolvimento do sistema com NestJS, Next.js, TypeORM e TypeScript.</dd>
+              <dd lang="en">Founder: system architecture and development with NestJS, Next.js, TypeORM and TypeScript.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Prova de conceito</dt><dt lang="en">Proof of concept</dt>
+              <dd lang="pt">POC da comunicação OCPP sobre WebSocket com Python e FastAPI.</dd>
+              <dd lang="en">A proof of concept of OCPP communication over WebSocket with Python and FastAPI.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Experiência profissional</span><span lang="en">Professional experience</span></h2>
+        </div>
+
+        <div class="timeline">
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Fundador</span><span lang="en">Founder</span></h3>
+              <div class="job__when"><span lang="pt">dez/2023 – presente</span><span lang="en">Dec 2023 – Present</span></div>
+            </div>
+            <div class="job__at">NowEv LTDA · <span lang="pt">meio período</span><span lang="en">part-time</span></div>
+            <ul>
+              <li lang="pt">Desenvolvo o sistema de gerenciamento de wallbox da NowEv seguindo o protocolo <strong>OCPP 1.6</strong>, com cadastro, monitoramento, controle de acesso e relatórios.</li>
+              <li lang="en">Building NowEv's wallbox management system on the <strong>OCPP 1.6</strong> protocol, covering registration, monitoring, access control and reporting.</li>
+            </ul>
+            <div class="stack job__stack">NestJS · Next.js · TypeORM · TypeScript · Python · FastAPI</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software Sênior</span><span lang="en">Senior Software Engineer</span></h3>
+              <div class="job__when"><span lang="pt">dez/2024 – mai/2025</span><span lang="en">Dec 2024 – May 2025</span></div>
+            </div>
+            <div class="job__at">Zapay</div>
+            <ul>
+              <li lang="pt">Desenvolvi e mantive integrações entre plataformas de <strong>CRM (HubSpot, Insider)</strong> e sistemas internos, com backend em <strong>Python (FastAPI)</strong>.</li>
+              <li lang="pt">Trabalhei com mensageria em <strong>RabbitMQ</strong> e com implantação e orquestração de serviços em <strong>Kubernetes</strong> na <strong>AWS</strong>.</li>
+              <li lang="en">Built and maintained integrations between <strong>CRM platforms (HubSpot, Insider)</strong> and internal systems, with a <strong>Python (FastAPI)</strong> backend.</li>
+              <li lang="en">Worked with <strong>RabbitMQ</strong> messaging and with deploying and orchestrating services on <strong>Kubernetes</strong> in <strong>AWS</strong>.</li>
+            </ul>
+            <div class="stack job__stack">Python · FastAPI · RabbitMQ · Kubernetes · AWS</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Desenvolvedor Full Stack</span><span lang="en">Full Stack Developer</span></h3>
+              <div class="job__when"><span lang="pt">abr/2021 – dez/2024</span><span lang="en">Apr 2021 – Dec 2024</span></div>
+            </div>
+            <div class="job__at">HeroSpark · EdTech</div>
+            <ul>
+              <li lang="pt">Implementei <strong>arquitetura orientada a eventos</strong> com EventBridge e SQS para o controle de matrículas de alunos.</li>
+              <li lang="pt">Criei o migrador de dados entre duas grandes bases, <strong>MongoDB → PostgreSQL</strong> (Eadbox → Edools), com bulk insert e service objects em Ruby puro.</li>
+              <li lang="pt">Desenvolvi apps multiplataforma em <strong>React Native</strong>, automatizei infraestrutura com <strong>Terraform</strong> e corrigi bugs nos apps nativos em Kotlin e Swift.</li>
+              <li lang="en">Implemented an <strong>event-driven architecture</strong> with EventBridge and SQS for student enrollment.</li>
+              <li lang="en">Built the data migrator between two large databases, <strong>MongoDB → PostgreSQL</strong> (Eadbox → Edools), using bulk inserts and plain-Ruby service objects.</li>
+              <li lang="en">Developed cross-platform <strong>React Native</strong> apps, automated infrastructure with <strong>Terraform</strong> and fixed bugs in the native Kotlin and Swift apps.</li>
+            </ul>
+            <div class="stack job__stack">Ruby on Rails · RSpec · TypeScript · React Native · Docker · Terraform · AWS</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Programador Ruby/Python</span><span lang="en">Ruby/Python Developer</span></h3>
+              <div class="job__when"><span lang="pt">set/2019 – mar/2021</span><span lang="en">Sep 2019 – Mar 2021</span></div>
+            </div>
+            <div class="job__at">Speedio · São Paulo, SP</div>
+            <ul>
+              <li lang="pt">Participei da migração do sistema legado Atlas V2 para o <strong>Atlas V3</strong> em uma empresa de big data B2B, usando <strong>Python e FastAPI</strong> para povoar a base <strong>Elasticsearch</strong>.</li>
+              <li lang="pt">Implementei testes automatizados com <strong>RSpec, Test::Unit e Pytest</strong>, em times Scrum.</li>
+              <li lang="en">Took part in migrating the legacy Atlas V2 system to <strong>Atlas V3</strong> at a B2B big data company, using <strong>Python and FastAPI</strong> to populate the <strong>Elasticsearch</strong> index.</li>
+              <li lang="en">Implemented automated tests with <strong>RSpec, Test::Unit and Pytest</strong> in Scrum teams.</li>
+            </ul>
+            <div class="stack job__stack">Ruby · Python · FastAPI · Elasticsearch · RSpec · Pytest</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Desenvolvedor Freelancer</span><span lang="en">Freelance Developer</span></h3>
+              <div class="job__when"><span lang="pt">out/2016 – abr/2020</span><span lang="en">Oct 2016 – Apr 2020</span></div>
+            </div>
+            <div class="job__at">Workana</div>
+            <ul>
+              <li lang="pt">Construí um <strong>ERP em Ruby on Rails</strong> e vários mini-ERPs em Rails e Django; refatorei queries de um sistema legado em ASP.NET clássico, melhorando o desempenho.</li>
+              <li lang="en">Built an <strong>ERP in Ruby on Rails</strong> and several small ERPs in Rails and Django; refactored queries in a legacy classic ASP.NET system, improving performance.</li>
+            </ul>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Início de carreira</span><span lang="en">Early career</span></h3>
+              <div class="job__when">2010 – 2017</div>
+            </div>
+            <ul>
+              <li lang="pt"><strong>UFPI</strong>: professor de Python em projeto de extensão para jovens da periferia (2016–2017) e monitor de Estrutura de Dados I e II (2014–2015).</li>
+              <li lang="pt"><strong>Secretaria de Segurança Pública do Piauí</strong>: estagiário no sistema de gestão de laudos periciais (2016).</li>
+              <li lang="pt"><strong>Macavi</strong>: técnico em redes e suporte com Linux, Shell Script, MikroTik, IBM Db2 e Clipper (2010–2011).</li>
+              <li lang="en"><strong>UFPI</strong>: Python instructor in an outreach program for underserved youth (2016–2017) and teaching assistant for Data Structures I and II (2014–2015).</li>
+              <li lang="en"><strong>Piauí Public Security Department</strong>: intern on the forensic report management system (2016).</li>
+              <li lang="en"><strong>Macavi</strong>: network and support technician with Linux, Shell Script, MikroTik, IBM Db2 and Clipper (2010–2011).</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Competências</span><span lang="en">Skills</span></h2>
+        </div>
+
+        <ul class="legend">
+          <li><i aria-hidden="true"></i><span><span lang="pt">Básico</span><span lang="en">Basic</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Intermediário</span><span lang="en">Intermediate</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Bom</span><span lang="en">Good</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Avançado</span><span lang="en">Advanced</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Especialista</span><span lang="en">Expert</span></span></li>
+        </ul>
+
+        <!-- níveis e anos estimados a partir das datas do LinkedIn: ajuste à vontade -->
+        <div class="skills">
+
+          <div class="skill" data-level="5">
+            <div class="skill__head">
+              <span class="skill__name">Ruby on Rails · RSpec</span>
+              <span class="skill__years"><span lang="pt">8 anos</span><span lang="en">8 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Especialista</span><span lang="en">Expert</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">Python · FastAPI</span>
+              <span class="skill__years"><span lang="pt">6 anos</span><span lang="en">6 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">TypeScript · NestJS · Next.js</span>
+              <span class="skill__years"><span lang="pt">4 anos</span><span lang="en">4 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">Mensageria e eventos</span><span lang="en">Messaging and events</span></span>
+              <span class="skill__years"><span lang="pt">4 anos</span><span lang="en">4 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">PostgreSQL · MongoDB</span>
+              <span class="skill__years"><span lang="pt">8 anos</span><span lang="en">8 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">APIs REST e integrações</span><span lang="en">REST APIs and integrations</span></span>
+              <span class="skill__years"><span lang="pt">8 anos</span><span lang="en">8 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="3">
+            <div class="skill__head">
+              <span class="skill__name">AWS · Terraform</span>
+              <span class="skill__years"><span lang="pt">4 anos</span><span lang="en">4 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Bom</span><span lang="en">Good</span></div>
+          </div>
+
+          <div class="skill" data-level="3">
+            <div class="skill__head">
+              <span class="skill__name">Docker · Kubernetes</span>
+              <span class="skill__years"><span lang="pt">4 anos</span><span lang="en">4 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Bom</span><span lang="en">Good</span></div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </article>
+
+  <footer class="page-foot no-print">Josafa Martins · Fortaleza, CE · <span lang="pt">Brasil</span><span lang="en">Brazil</span></footer>
+</div>
+
+<script src="assets/js/app.js" defer></script>
+
+</body>
+</html>
